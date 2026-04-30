@@ -1,0 +1,133 @@
+body {
+    height: 100vh;
+    margin: 0;
+}
+
+.left-panel {
+    background: linear-gradient(135deg, #198754, #157347);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-panel img {
+    width: 80%;
+    max-width: 350px;
+}
+
+.divider {
+    position: relative;
+    text-align: center;
+}
+
+.divider span {
+    background: transparent;
+    padding: 0 105px;
+    color: white;
+    font-size: 18px;
+    position: relative;
+    z-index: 1;
+}
+
+.divider::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 70%;
+    height: 1px;
+    background: rgba(255,255,255,0.5);
+}
+
+.divider::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 70%;
+    height: 1px;
+    background: rgba(255,255,255,0.5);
+}
+
+.tagline {
+    font-size: 18px;
+    margin-top: 10px;
+    opacity: 0.9;
+}
+
+.features i {
+    background: rgba(255,255,255,0.15);
+    padding: 15px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.features p {
+    color: #fff;
+    font-size: 12px;
+}
+
+.features div:hover i {
+    background: white;
+    color: #198754;
+    transition: 0.3s;
+}
+
+.right-panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f8f9fa;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.login-icon {
+    width: 60px;
+    height: 60px;
+    background: #198754;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    font-size: 24px;
+}
+
+.form-control {
+    border-radius: 8px;
+    height: 45px;
+}
+
+.btn-login {
+    background: #198754;
+    color: white;
+    border-radius: 8px;
+    height: 45px;
+}
+
+.btn-login:hover {
+    background: #157347;
+}
+
+.footer-text {
+    font-size: 12px;
+    color: gray;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.footer-text span{
+    color: #198754;
+}
