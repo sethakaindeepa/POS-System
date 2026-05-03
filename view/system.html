@@ -14,9 +14,11 @@
     <link rel="stylesheet" href="Style2.css">
 </head>
 <body>
+
 <div class="container-fluid">
     <div class="row vh-100">
 
+        <!-- SIDEBAR -->
         <div class="col-md-3 col-lg-2 bg-success text-white p-3 d-flex flex-column">
 
             <div class="text-center">
@@ -25,11 +27,11 @@
             </div>
 
             <div class="mt-4 flex-grow-1">
-                <button class="btn btn-dark w-100 mb-2">Dashboard</button>
-                <button class="btn btn-dark w-100 mb-2">Customer</button>
-                <button class="btn btn-dark w-100 mb-2">Item</button>
-                <button class="btn btn-dark w-100 mb-2">Order</button>
-                <button class="btn btn-dark w-100 mb-2">Order History</button>
+                <button id="dashboardBtn" class="btn btn-dark w-100 mb-2">Dashboard</button>
+                <button id="customerBtn" class="btn btn-dark w-100 mb-2">Customer</button>
+                <button id="itemBtn" class="btn btn-dark w-100 mb-2">Item</button>
+                <button id="orderBtn" class="btn btn-dark w-100 mb-2">Order</button>
+                <button id="historyBtn" class="btn btn-dark w-100 mb-2">Order History</button>
             </div>
 
             <button id="logoutBtn" class="btn btn-danger w-100 mt-auto">
@@ -37,69 +39,154 @@
             </button>
         </div>
 
+        <!-- CONTENT AREA -->
         <div class="col-md-9 col-lg-10 bg-light p-4">
 
-            <div class="light-green-box text-white p-4 rounded mb-4">
-                <h2>Your Choice is First.</h2>
-                <p>Orients restaurant - Gampaha</p>
-            </div>
+            <!-- DASHBOARD -->
+            <section id="dashboard-content">
 
-            <div class="row g-4">
-
-                <div class="col-md-4">
-                    <div class="card food-card text-center">
-                        <img src="../assets/cheese%20burger.jpg" class="card-img-top">
-                        <div class="card-body bg-dark text-white rounded-bottom">
-                            Cheese Burger <br> Rs.130
-                        </div>
-                    </div>
+                <div class="light-green-box text-white p-4 rounded mb-4">
+                    <h2>Your Choice is First.</h2>
+                    <p>Orients restaurant - Gampaha</p>
                 </div>
 
-                <div class="col-md-4">
-                    <div class="card food-card text-center">
-                        <img src="../assets/veggi%20burger.jfif" class="card-img-top">
-                        <div class="card-body bg-dark text-white rounded-bottom">
-                            Veggie Burger <br> Rs.150
+                <div class="row g-4">
+
+                    <div class="col-md-4">
+                        <div class="card food-card text-center">
+                            <img src="../assets/cheese%20burger.jpg" class="card-img-top">
+                            <div class="card-body bg-dark text-white rounded-bottom">
+                                Cheese Burger <br> Rs.130
+                            </div>
                         </div>
                     </div>
+
+                    <div class="col-md-4">
+                        <div class="card food-card text-center">
+                            <img src="../assets/veggi%20burger.jfif" class="card-img-top">
+                            <div class="card-body bg-dark text-white rounded-bottom">
+                                Veggie Burger <br> Rs.150
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card food-card text-center">
+                            <img src="../assets/mushroom-burger.jpg" class="card-img-top">
+                            <div class="card-body bg-dark text-white rounded-bottom">
+                                Mushroom Burger <br> Rs.160
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card food-card text-center">
+                            <img src="../assets/primetime%20burger.jpg" class="card-img-top">
+                            <div class="card-body bg-dark text-white rounded-bottom">
+                                Primetime Burger <br> Rs.120
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card food-card text-center">
+                            <img src="../assets/french%20fries.webp" class="card-img-top">
+                            <div class="card-body bg-dark text-white rounded-bottom">
+                                French Fries <br> Rs.100
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card food-card text-center">
+                            <img src="../assets/potato%20gems.jfif" class="card-img-top">
+                            <div class="card-body bg-dark text-white rounded-bottom">
+                                Potato Gems <br> Rs.110
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
-                <div class="col-md-4">
-                    <div class="card food-card text-center">
-                        <img src="../assets/mushroom-burger.jpg" class="card-img-top">
-                        <div class="card-body bg-dark text-white rounded-bottom">
-                            Mushroom Burger <br> Rs.160
-                        </div>
+
+
+            </section>
+
+            <!-- CUSTOMER SECTION -->
+            <section id="customer-content" style="display:none;">
+
+                <div class="container">
+
+                    <div class="title-box">
+                        Customer Management
                     </div>
+
+                    <div class="form-card mb-4">
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label>Customer ID</label>
+                                <input type="text" class="form-control">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label>NIC</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label>Name</label>
+                                <input type="text" class="form-control">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label>Contact No.</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <label>Address</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+
+                        <div  class="d-flex justify-content-end gap-2 mt-3">
+                            <button class="btn btn-success me-2">Save</button>
+                            <button class="btn btn-primary me-2">Update</button>
+                            <button class="btn btn-danger me-2">Delete</button>
+                            <button class="btn btn-secondary">Reset</button>
+                        </div>
+
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered text-center">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Address</th>
+                                <th>NIC</th>
+                                <th>Contact No.</th>
+                            </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+
                 </div>
 
-                <div class="col-md-4">
-                    <div class="card food-card text-center">
-                        <img src="../assets/primetime%20burger.jpg" class="card-img-top">
-                        <div class="card-body bg-dark text-white rounded-bottom">
-                            Primetime Burger <br> Rs.120
-                        </div>
-                    </div>
-                </div>
+            </section>
 
-                <div class="col-md-4">
-                    <div class="card food-card text-center">
-                        <img src="../assets/french%20fries.webp" class="card-img-top">
-                        <div class="card-body bg-dark text-white rounded-bottom">
-                            French Fries <br> Rs.100
-                        </div>
-                    </div>
-                </div>
+            <section id="item-content"></section>
 
-                <div class="col-md-4">
-                    <div class="card food-card text-center">
-                        <img src="../assets/potato%20gems.jfif" class="card-img-top">
-                        <div class="card-body bg-dark text-white rounded-bottom">
-                            Potato Gems <br> Rs.110
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <section id="order-content"></section>
+
+            <section id="history-content"></section>
         </div>
     </div>
 </div>
