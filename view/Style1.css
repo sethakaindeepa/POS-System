@@ -4,7 +4,7 @@ body {
 }
 
 .left-panel {
-    background: linear-gradient(135deg, #198754, #157347);
+    background: #4da616;
     color: white;
     display: flex;
     flex-direction: column;
