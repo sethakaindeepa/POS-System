@@ -64,13 +64,21 @@ const addCustomerData = (id, name, nic, contact, address) => {
 
 // -------------------------- Update Customer -------------------------------
 const updateCustomerData= (id, name, nic, contact, address) => {
-    let obj = customer_db.find(item => item.id == sid);
+    let obj = customer_db.find(item => item.id == id);
 
     if(obj) {
         obj.name=name;
         obj.nic=nic;
         obj.contact=contact;
         obj.address=address
+    }
+}
+// --------------------------- Delete Student ---------------------------
+const deleteCustomerData = (id) => {
+    let index = customer_db.findIndex(item => item.id == id); // -1
+
+    if(index!==-1) {
+        customer_db.splice(index, 1);
     }
 }
 
@@ -83,4 +91,9 @@ const getCustomerDataById = (id) => {
 const getCustomerData = () => {
     return customer_db;
 }
-export {addCustomerData,updateCustomerData,getCustomerData,getCustomerDataById};
+
+// --------------------------- Get Student by Index ---------------------------
+const getCustomerDataByIndex = (index) => {
+    return customer_db[index];
+}
+export {addCustomerData,updateCustomerData,deleteCustomerData,getCustomerData,getCustomerDataById,getCustomerDataByIndex};

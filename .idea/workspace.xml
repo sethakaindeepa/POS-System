@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3044a854-a86a-4e01-90c9-f0056650bf59" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/controller/CustomerController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/db.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/CustomerModel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/regex_utils.js" afterDir="false" />
+    <list default="true" id="3044a854-a86a-4e01-90c9-f0056650bf59" name="Changes" comment="Add save,update,load customers">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/POS System.iml" beforeDir="false" afterPath="$PROJECT_DIR$/POS System.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/system.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/system.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/CustomerController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/CustomerController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/CustomerModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/model/CustomerModel.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,12 +95,25 @@
       <workItem from="1777567593756" duration="509000" />
       <workItem from="1777603877287" duration="8661000" />
       <workItem from="1777637107060" duration="9471000" />
-      <workItem from="1777785617308" duration="23607000" />
+      <workItem from="1777785617308" duration="30676000" />
     </task>
+    <task id="LOCAL-00001" summary="Add save,update,load customers">
+      <option name="closed" value="true" />
+      <created>1777818214392</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1777818214392</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add save,update,load customers" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add save,update,load customers" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
