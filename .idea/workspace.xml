@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3044a854-a86a-4e01-90c9-f0056650bf59" name="Changes" comment="Add save,update,load customers">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controller/ItemController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/ItemModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/Style2.css" beforeDir="false" afterPath="$PROJECT_DIR$/view/Style2.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/system.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/system.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -95,7 +97,7 @@
       <workItem from="1777603877287" duration="8661000" />
       <workItem from="1777637107060" duration="9471000" />
       <workItem from="1777785617308" duration="31158000" />
-      <workItem from="1777875566668" duration="1006000" />
+      <workItem from="1777875566668" duration="16256000" />
     </task>
     <task id="LOCAL-00001" summary="Add save,update,load customers">
       <option name="closed" value="true" />
