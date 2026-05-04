@@ -85,3 +85,137 @@ table{
 th{
     background-color: #dcdcdc;
 }
+
+#item-content{
+    font-family: Arial, serif;
+    background-color: #E4DDDD;
+}
+
+.item-container{
+    width: 80%;
+    margin: 30px auto;
+    background: #eaeaea;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.header h2{
+    background: #1DA350;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 25px;
+}
+
+.add-btn{
+    position: absolute;
+    right: 0;
+    background: #3A69D7;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.card-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.card{
+    background: white;
+    width: 180px;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.price{
+    color: blue;
+    font-weight: bold;
+}
+
+.btn-group{
+    margin-top: 10px;
+}
+
+.edit{
+    background: orange;
+    border: none;
+    padding: 5px 10px;
+    margin-right: 5px;
+}
+
+.delete{
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+}
+
+table{
+    width: 100%;
+    margin-top: 20px;
+    background: white;
+    border-collapse: collapse;
+}
+
+th, td{
+    padding: 10px;
+    border: 10px solid #ccc;
+    text-align: center;
+}
+
+.modal{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background: white;
+    width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.modal input {
+    width: 100%;
+    margin: 8px 0;
+    padding: 8px;
+}
+
+.modal-buttons {
+    text-align: right;
+}
+
+#item_save_btn{
+    background: blue;
+    color: white;
+    padding: 8px 15px;
+}
+
+#item_reset_btn{
+    background: gray;
+    color: white;
+    padding: 8px 15px;
+}
+
+.close {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+}

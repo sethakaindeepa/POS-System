@@ -184,7 +184,54 @@
 
             </section>
 
-            <section id="item-content"></section>
+            <section id="item-content">
+               <div class="item-container">
+                   <div class="header">
+                       <h2>Item Management</h2>
+                       <button class="add-btn">+ Add Item</button>
+                   </div>
+
+                   <div class="card-container"></div>
+
+                   <table>
+                       <thead>
+                       <tr>
+                           <th>ID</th>
+                           <th>Name</th>
+                           <th>Price</th>
+                           <th>Stock Qty</th>
+                       </tr>
+                       </thead>
+                       <tbody id="item_tbody"></tbody>
+                   </table>
+               </div>
+
+                <div class="modal" id="modal">
+                    <div class="modal-content">
+                        <span class="close">X</span>
+                        <h3>Add / Edit Item</h3>
+
+                        <input type="hidden" id="index">
+
+                        <label>ID</label>
+                        <input type="text" id="item-id-input">
+
+                        <label>Name</label>
+                        <input type="text" id="item-name-input">
+
+                        <label>Price</label>
+                        <input type="number" id="item-price-input">
+
+                        <label>Stock Qty</label>
+                        <input type="number" id="item-qty-input">
+
+                        <div class="modal-buttons">
+                            <button type="button" id="item_save_btn" class="btn btn-primary">Save</button>
+                            <button type="button" id="item_reset_btn" class="btn btn-secondary">Reset</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             <section id="order-content"></section>
 
