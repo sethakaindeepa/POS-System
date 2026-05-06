@@ -140,7 +140,7 @@ $('#customer_reset_btn').on('click', function () {
 });
 
 
-//------------------------- Click on Student Row ------------------------------
+//------------------------- Click on Customer Row ------------------------------
 $('#customer_tbody').on('click', 'tr', function () {
     let customer_obj = getCustomerDataByIndex($(this).index());
 

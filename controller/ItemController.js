@@ -31,11 +31,22 @@ $('#item_save_btn').click(function (){
         });
     }
 
-    let item = {id,name,price,qty};
+    let items = getAllItems();
+
 
     if (index === "" || index === null) {
 
-        addItem(item);
+        let exists = items.some(item => item.id === id);
+
+        if (exists) {
+            return Swal.fire({
+                icon: "error",
+                title: "Duplicate ID",
+                text: "This Item ID already exists!"
+            });
+        }
+
+        addItem({id, name, price, qty});
 
         Swal.fire({
             icon: "success",
@@ -46,7 +57,7 @@ $('#item_save_btn').click(function (){
         });
 
     } else{
-        updateItem(index, item);
+        updateItem(index, {id, name, price, qty});
 
         Swal.fire({
             icon: "success",

@@ -2,3 +2,8 @@
 let customer_db = [];
 
 export {customer_db};
+
+//----------------------------- Item DB -------------------------------------------
+let item_db = [];
+
+export {item_db};

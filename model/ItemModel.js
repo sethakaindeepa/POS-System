@@ -1,24 +1,21 @@
-let items = JSON.parse(localStorage.getItem("items")) || [];
+import {item_db} from '../db/db.js';
 
 export function getAllItems() {
-    return items;
+    return item_db;
 }
 
 export function addItem(item) {
-    items.push(item);
-    save();
+    item_db.push(item);
+
 }
 
 export function updateItem(index, item) {
-    items[index] = item;
-    save();
+    item_db[index] = item;
+
 }
 
 export function deleteItem(index) {
-    items.splice(index, 1);
-    save();
+    item_db.splice(index, 1);
+
 }
 
-function save() {
-    localStorage.setItem("items", JSON.stringify(items));
-}
