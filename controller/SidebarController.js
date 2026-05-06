@@ -52,9 +52,9 @@ $(document).ready(function (){
         $('#order-content').show();
     });
 
-    $('#orderBtn').click(function () {
+    $('#historyBtn').click(function () {
         $('section').hide();
-        $('#order-content').show();
+        $('#history-content').show();
     });
 });
 

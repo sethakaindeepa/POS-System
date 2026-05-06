@@ -11,19 +11,19 @@ $('.close').click(() => {
 });
 
 $('#item_reset_btn').click(() => {
-    $('#item-id-input,#item-name-input,#item-price-input,#item-qty-input,#index').val('');
+    $('#item-code-input,#item-name-input,#item-price-input,#item-qty-input,#index').val('');
 });
 
 // ----------------------------ITEM SAVE-----------------------------------------------
 $('#item_save_btn').click(function (){
 
-    let id = $('#item-id-input').val();
+    let code = $('#item-code-input').val();
     let name = $('#item-name-input').val();
     let price = $('#item-price-input').val();
     let qty = $('#item-qty-input').val();
     let index = $('#index').val();
 
-    if (!id || !name || !price || !qty) {
+    if (!code || !name || !price || !qty) {
         return Swal.fire({
             icon: "warning",
             title: "Missing Fields",
@@ -36,7 +36,7 @@ $('#item_save_btn').click(function (){
 
     if (index === "" || index === null) {
 
-        let exists = items.some(item => item.id === id);
+        let exists = items.some(item => item.code === code);
 
         if (exists) {
             return Swal.fire({
@@ -46,7 +46,7 @@ $('#item_save_btn').click(function (){
             });
         }
 
-        addItem({id, name, price, qty});
+        addItem({code, name, price, qty});
 
         Swal.fire({
             icon: "success",
@@ -57,7 +57,7 @@ $('#item_save_btn').click(function (){
         });
 
     } else{
-        updateItem(index, {id, name, price, qty});
+        updateItem(index, {code, name, price, qty});
 
         Swal.fire({
             icon: "success",
@@ -88,7 +88,7 @@ function render(){
         $('.card-container').append(`
     <div class="card">
         <h5>${item.name}</h5>
-        <p>ID: ${item.id}</p>
+        <p>Code: ${item.code}</p>
         <span class="price">LKR ${item.price}</span>
         <p>Stock: ${item.qty}</p>
 
@@ -101,7 +101,7 @@ function render(){
 
         $('#item_tbody').append(`
     <tr>
-        <td>${item.id}</td>
+        <td>${item.code}</td>
         <td>${item.name}</td>
         <td>${item.price}</td>
         <td>${item.qty}</td>
@@ -116,7 +116,7 @@ $('.card-container').on('click','.edit-btn',function (){
     let index = $(this).data('index');
     let item = getAllItems()[index];
 
-    $('#item-id-input').val(item.id);
+    $('#item-code-input').val(item.code);
     $('#item-name-input').val(item.name);
     $('#item-price-input').val(item.price);
     $('#item-qty-input').val(item.qty);

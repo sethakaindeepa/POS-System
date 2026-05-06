@@ -236,3 +236,39 @@ th, td{
     right: 10px;
     cursor: pointer;
 }
+
+#order-content{
+    background-color: #E4DDDD;
+}
+
+.order-wrapper{
+    max-width: 1100px;
+    margin: auto;
+}
+
+.order-title {
+    background: #28a745;
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding: 12px 40px;
+    border-radius: 30px;
+    font-weight: bold;
+    margin: 30px auto;
+    font-size: 32px;
+    position: relative;
+
+}
+
+.order-card {
+    background: #eae6e6;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.total-text{
+    font-size: 18px;
+    font-weight: bold;
+    color: blue;
+}

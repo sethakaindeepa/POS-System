@@ -196,9 +196,9 @@
                    <table>
                        <thead>
                        <tr>
-                           <th>ID</th>
+                           <th>Code</th>
                            <th>Name</th>
-                           <th>Price</th>
+                           <th>Unit Price</th>
                            <th>Stock Qty</th>
                        </tr>
                        </thead>
@@ -213,13 +213,13 @@
 
                         <input type="hidden" id="index">
 
-                        <label for="item-id-input" class="form-label">ID</label>
-                        <input type="text"  class="form-control" id="item-id-input">
+                        <label for="item-code-input" class="form-label">Code</label>
+                        <input type="text"  class="form-control" id="item-code-input">
 
                         <label for="item-name-input" class="form-label">Name</label>
                         <input type="text" class="form-control" id="item-name-input">
 
-                        <label for="item-price-input" class="form-label">Price</label>
+                        <label for="item-price-input" class="form-label">Unit Price</label>
                         <input type="text" class="form-control" id="item-price-input">
 
                         <label for="item-qty-input" class="form-label">Stock Qty</label>
@@ -233,7 +233,93 @@
                 </div>
             </section>
 
-            <section id="order-content"></section>
+            <section id="order-content">
+                <div class="order-wrapper mt-4">
+
+                    <div class="text-center mb-3">
+                        <span class="order-title">Place Order</span>
+                    </div>
+
+                    <div class="order-card">
+                        <div class="row">
+                            <div class="col">
+                                <label for="customerId" class="form-label">Customer Id</label>
+                                <select id="customerId" class="form-control"></select>
+                            </div>
+                            <div class="col">
+                                <label for="customerName" class="form-label">Customer Name</label>
+                                <input id="customerName" class="form-control" readonly>
+                            </div>
+                            <div class="col">
+                                <label for="customerAddress" class="form-label">Customer Address</label>
+                                <input id="customerAddress" class="form-control" readonly>
+                            </div>
+                            <div class="col">
+                                <label for="customerNIC" class="form-label">Customer NIC</label>
+                                <input id="customerNIC" class="form-control" readonly>
+                            </div>
+                            <div class="col">
+                                <label for="customerContact" class="form-label">Customer Contact</label>
+                                <input id="customerContact" class="form-control" readonly></div>
+                        </div>
+                    </div>
+
+                    <div class="order-card">
+                        <div class="row">
+                            <div class="col">
+                                <label for="itemCode" class="form-label">Item Code</label>
+                                <select id="itemCode" class="form-control"></select>
+                            </div>
+                            <div class="col">
+                                <label for="itemName" class="form-label">Item Name</label>
+                                <input id="itemName" class="form-control" readonly>
+                            </div>
+                            <div class="col">
+                                <label for="price" class="form-label">Unit Price</label>
+                                <input id="price" class="form-control" readonly>
+                            </div>
+                            <div class="col">
+                                <label for="availableQty" class="form-label">Available Qty</label>
+                                <input id="availableQty" type="number" class="form-control" readonly>
+                            </div>
+
+                            <div class="col-md-2">
+                                <label for="Qty" class="form-label">Qty</label>
+                                <input id="Qty" type="text" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="text-end mt-2">
+                            <button id="resetItemBtn" class="btn btn-secondary">Reset</button>
+                            <button id="addBtn" class="btn btn-primary">+ Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="order-card">
+                        <table class="table table-bordered text-center">
+                            <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Price</th>
+                                <th>Qty</th>
+                                <th>Subtotal</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody id="cartTable"></tbody>
+                        </table>
+
+                        <div class="d-flex justify-content-between">
+                            <span class="total-text">Total: LKR<span id="total">0</span></span>
+
+                            <div class="d-flex gap-2">
+                                <button id="resetCartBtn" class="btn btn-secondary">Reset</button>
+                                <button id="placeOrderBtn" class="btn btn-success">Place Order</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             <section id="history-content"></section>
         </div>
