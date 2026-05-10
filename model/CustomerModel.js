@@ -1,4 +1,4 @@
-import {customer_db} from '../db/db.js';
+import { customer_db, saveCustomers, loadFromStorage } from '../db/db.js';
 
 class Customer {
     #id;
@@ -56,10 +56,13 @@ class Customer {
     }
 }
 
+loadFromStorage();
+
 // ------------------------- Add Customer -----------------------------------
 const addCustomerData = (id, name, nic, contact, address) => {
    let new_customer = new Customer(id,name,nic,contact,address);
    customer_db.push(new_customer);
+    saveCustomers();
 }
 
 // -------------------------- Update Customer -------------------------------
@@ -70,8 +73,10 @@ const updateCustomerData= (id, name, nic, contact, address) => {
         obj.name=name;
         obj.nic=nic;
         obj.contact=contact;
-        obj.address=address
+        obj.address=address;
+        saveCustomers();
     }
+
 }
 // --------------------------- Delete Student ---------------------------
 const deleteCustomerData = (id) => {
@@ -79,6 +84,7 @@ const deleteCustomerData = (id) => {
 
     if(index!==-1) {
         customer_db.splice(index, 1);
+        saveCustomers();
     }
 }
 

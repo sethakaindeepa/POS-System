@@ -1,4 +1,6 @@
-import {item_db} from '../db/db.js';
+import { item_db, saveItems, loadFromStorage } from '../db/db.js';
+
+loadFromStorage();
 
 export function getAllItems() {
     return item_db;
@@ -6,16 +8,19 @@ export function getAllItems() {
 
 export function addItem(item) {
     item_db.push(item);
-
+    saveItems();
 }
 
-export function updateItem(index, item) {
-    item_db[index] = item;
-
+export function updateItem(code, updatedItem) {
+    const index = item_db.findIndex(item => item.code === code);
+    if (index !== -1) {
+        item_db[index] = updatedItem;
+        saveItems();
+    }
 }
 
 export function deleteItem(index) {
     item_db.splice(index, 1);
-
+    saveItems();
 }
 

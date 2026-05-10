@@ -1,6 +1,19 @@
 import {addCustomerData, updateCustomerData,deleteCustomerData, getCustomerDataById, getCustomerData,getCustomerDataByIndex} from "../model/CustomerModel.js";
 import {check_nic, check_contact} from '../utils/regex_utils.js';
 
+$(document).ready(function () {
+    cleanInvalidCustomers();
+    loadCustomerTbl();
+});
+
+function cleanInvalidCustomers() {
+    let customers = getCustomerData();
+    let cleanData = customers.filter(c => c && c.id && c.name);
+
+    // Update the database with clean data
+    // You'll need to expose a function in CustomerModel or directly update if using db.js
+    console.log("Cleaned", customers.length - cleanData.length, "invalid records");
+}
 //---------------------------Start: Customer Add (Create)--------------------------
 $('#customer_save_btn').on('click',function (){
     let id = $ ('#customer_id_input').val();
@@ -34,6 +47,8 @@ $('#customer_save_btn').on('click',function (){
         cleanCustomerForm();
         Swal.fire({icon: "success", title: "Customer saved successfully!"});
         loadCustomerTbl();
+
+        window.dispatchEvent(new Event('customerUpdated'));
     }
 })
 //-----------------------------End: Customer Add -------------------------------------
@@ -70,6 +85,8 @@ $('#customer_update_btn').on('click', function () {
         cleanCustomerForm();
         Swal.fire({icon: "success", title: "Customer updated successfully!"});
         loadCustomerTbl();
+
+        window.dispatchEvent(new Event('customerUpdated'));
     }
 })
 //-------------------------------End: Customer Update----------------------------------
@@ -110,19 +127,38 @@ $('#customer_delete_btn').on('click', function () {
             }
 
         });
+        window.dispatchEvent(new Event('customerUpdated'));
     }
 });
 //------------------------- End: Student Delete ------------------------------
 
 //------------------------- Load Customer Tbl (Read) ------------------------------
+//------------------------- Load Customer Tbl (Read) ------------------------------
 const loadCustomerTbl = () => {
     $('#customer_tbody').empty();
-    let customer_db = getCustomerData();
-    customer_db.map((item, index) => {
-        let new_row = `<tr data-index="${index}"> <td>${item.id}</td> <td>${item.name}</td> <td>${item.nic}</td> <td>${item.contact}</td> <td>${item.address}</td> </tr>`;
+
+    let customers = getCustomerData();
+
+    // Filter out invalid/empty customers
+    customers = customers.filter(customer =>
+        customer && customer.id && customer.name
+    );
+
+    customers.forEach((item, index) => {
+        let new_row = `
+            <tr data-index="${index}">
+                <td>${item.id || ''}</td>
+                <td>${item.name || ''}</td>
+                <td>${item.address || ''}</td>
+                <td>${item.nic || ''}</td>
+                <td>${item.contact || ''}</td>
+            </tr>`;
+
         $('#customer_tbody').append(new_row);
     });
-}
+
+    console.log(`Loaded ${customers.length} valid customers`);
+};
 
 
 

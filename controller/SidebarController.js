@@ -50,6 +50,8 @@ $(document).ready(function (){
     $('#orderBtn').click(function () {
         $('section').hide();
         $('#order-content').show();
+
+        window.dispatchEvent(new Event('refreshOrderDropdowns'));
     });
 
     $('#historyBtn').click(function () {

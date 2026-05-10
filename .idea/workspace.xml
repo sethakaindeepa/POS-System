@@ -5,9 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3044a854-a86a-4e01-90c9-f0056650bf59" name="Changes" comment="Add save,update,load customers">
+      <change afterPath="$PROJECT_DIR$/controller/OrderController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controller/OrderHistoryController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/OrderItemModel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/OrderModel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/ItemController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/ItemController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/CustomerController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/CustomerController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/SidebarController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/SidebarController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/db/db.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/CustomerModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/model/CustomerModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/ItemModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/model/ItemModel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/Style2.css" beforeDir="false" afterPath="$PROJECT_DIR$/view/Style2.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/system.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/system.html" afterDir="false" />
     </list>
@@ -99,7 +106,13 @@
       <workItem from="1777637107060" duration="9471000" />
       <workItem from="1777785617308" duration="31158000" />
       <workItem from="1777875566668" duration="19748000" />
-      <workItem from="1778040853701" duration="8957000" />
+      <workItem from="1778040853701" duration="18123000" />
+      <workItem from="1778122649246" duration="1998000" />
+      <workItem from="1778138940809" duration="456000" />
+      <workItem from="1778143310924" duration="725000" />
+      <workItem from="1778145448787" duration="3027000" />
+      <workItem from="1778148551474" duration="946000" />
+      <workItem from="1778379304553" duration="32523000" />
     </task>
     <task id="LOCAL-00001" summary="Add save,update,load customers">
       <option name="closed" value="true" />
@@ -118,6 +131,17 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add save,update,load customers" />
     <option name="LAST_COMMIT_MESSAGE" value="Add save,update,load customers" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/controller/CustomerController.js</url>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
