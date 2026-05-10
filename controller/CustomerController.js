@@ -10,8 +10,7 @@ function cleanInvalidCustomers() {
     let customers = getCustomerData();
     let cleanData = customers.filter(c => c && c.id && c.name);
 
-    // Update the database with clean data
-    // You'll need to expose a function in CustomerModel or directly update if using db.js
+
     console.log("Cleaned", customers.length - cleanData.length, "invalid records");
 }
 //---------------------------Start: Customer Add (Create)--------------------------
@@ -132,14 +131,14 @@ $('#customer_delete_btn').on('click', function () {
 });
 //------------------------- End: Student Delete ------------------------------
 
-//------------------------- Load Customer Tbl (Read) ------------------------------
+
 //------------------------- Load Customer Tbl (Read) ------------------------------
 const loadCustomerTbl = () => {
     $('#customer_tbody').empty();
 
     let customers = getCustomerData();
 
-    // Filter out invalid/empty customers
+
     customers = customers.filter(customer =>
         customer && customer.id && customer.name
     );
