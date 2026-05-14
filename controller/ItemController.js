@@ -1,27 +1,36 @@
-import{getAllItems,addItem,updateItem,deleteItem} from "../model/ItemModel.js";
+import { getAllItems, addItem, updateItem, deleteItem } from "../model/ItemModel.js";
 
 $(document).ready(function () {
+
+    // ---------------- OPEN MODAL ----------------
     $('.add-btn').click(function () {
         $('#modal').show();
     });
+
+    // ---------------- INITIAL RENDER ----------------
+    render();
 });
 
+// ---------------- CLOSE MODAL ----------------
 $('.close').click(() => {
-     $('#modal').hide();
+    $('#modal').hide();
 });
 
+// ---------------- RESET FORM ----------------
 $('#item_reset_btn').click(() => {
     $('#item-code-input,#item-name-input,#item-price-input,#item-qty-input,#index').val('');
 });
 
-// ----------------------------ITEM SAVE-----------------------------------------------
-$('#item_save_btn').click(function (){
+// ---------------- SAVE / UPDATE ITEM ----------------
+$('#item_save_btn').click(function () {
 
     let code = $('#item-code-input').val();
     let name = $('#item-name-input').val();
     let price = $('#item-price-input').val();
     let qty = $('#item-qty-input').val();
-    let index = $('#index').val();
+
+    // hidden field (stores old code when editing)
+    let oldCode = $('#index').val();
 
     if (!code || !name || !price || !qty) {
         return Swal.fire({
@@ -33,8 +42,8 @@ $('#item_save_btn').click(function (){
 
     let items = getAllItems();
 
-
-    if (index === "" || index === null) {
+    // ---------------- ADD NEW ITEM ----------------
+    if (!oldCode) {
 
         let exists = items.some(item => item.code === code);
 
@@ -46,7 +55,7 @@ $('#item_save_btn').click(function (){
             });
         }
 
-        addItem({code, name, price, qty});
+        addItem({ code, name, price, qty });
 
         Swal.fire({
             icon: "success",
@@ -56,8 +65,12 @@ $('#item_save_btn').click(function (){
             showConfirmButton: false
         });
 
-    } else{
-        updateItem(index, {code, name, price, qty});
+    }
+
+    // ---------------- UPDATE ITEM ----------------
+    else {
+
+        updateItem(oldCode, { code, name, price, qty });
 
         Swal.fire({
             icon: "success",
@@ -74,61 +87,66 @@ $('#item_save_btn').click(function (){
     $('#item_reset_btn').click();
 });
 
-//---------------------------RENDER UI (CARDS + TABLE)--------------------------------
 
-function render(){
+// ---------------- RENDER ITEMS ----------------
+function render() {
 
     let items = getAllItems();
 
     $('.card-container').empty();
     $('#item_tbody').empty();
 
-    items.forEach((item,i) =>{
+    items.forEach((item) => {
 
         $('.card-container').append(`
-    <div class="card">
-        <h5>${item.name}</h5>
-        <p>Code: ${item.code}</p>
-        <span class="price">LKR ${item.price}</span>
-        <p>Stock: ${item.qty}</p>
+            <div class="card">
+                <h5>${item.name}</h5>
+                <p>Code: ${item.code}</p>
+                <span class="price">LKR ${item.price}</span>
+                <p>Stock: ${item.qty}</p>
 
-        <div class="btn-group">
-            <button class="edit-btn btn btn-warning btn-sm" data-index="${i}">Edit</button>
-            <button class="delete-btn btn btn-danger btn-sm" data-index="${i}">Delete</button>
-        </div>
-    </div>
-`);
+                <div class="btn-group">
+                    <button class="edit-btn btn btn-warning btn-sm" data-code="${item.code}">Edit</button>
+                    <button class="delete-btn btn btn-danger btn-sm" data-code="${item.code}">Delete</button>
+                </div>
+            </div>
+        `);
 
         $('#item_tbody').append(`
-    <tr>
-        <td>${item.code}</td>
-        <td>${item.name}</td>
-        <td>${item.price}</td>
-        <td>${item.qty}</td>
-    </tr>
-`);
+            <tr>
+                <td>${item.code}</td>
+                <td>${item.name}</td>
+                <td>${item.price}</td>
+                <td>${item.qty}</td>
+            </tr>
+        `);
     });
 }
 
-//-------------------------------------EDIT ITEM --------------------------------------
-$('.card-container').on('click','.edit-btn',function (){
 
-    let index = $(this).data('index');
-    let item = getAllItems()[index];
+// ---------------- EDIT ITEM ----------------
+$('.card-container').on('click', '.edit-btn', function () {
+
+    let code = $(this).data('code');
+
+    let item = getAllItems().find(i => i.code === code);
 
     $('#item-code-input').val(item.code);
     $('#item-name-input').val(item.name);
     $('#item-price-input').val(item.price);
     $('#item-qty-input').val(item.qty);
-    $('#index').val(index);
+
+    // store old code
+    $('#index').val(item.code);
 
     $('#modal').show();
 });
 
-//--------------------------------Start: Item Delete (Delete)----------------------------
-$('.card-container').on('click','.delete-btn',function (){
 
-    let index = $(this).data('index');
+// ---------------- DELETE ITEM ----------------
+$('.card-container').on('click', '.delete-btn', function () {
+
+    let code = $(this).data('code');
 
     Swal.fire({
         title: "Are you sure?",
@@ -141,12 +159,8 @@ $('.card-container').on('click','.delete-btn',function (){
     }).then((result) => {
 
         if (result.isConfirmed) {
-            deleteItem(index);
+            deleteItem(code);
             render();
         }
     });
-});
-
-$(document).ready(function (){
-    render();
 });

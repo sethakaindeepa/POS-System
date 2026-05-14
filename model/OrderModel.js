@@ -1,6 +1,6 @@
 
 
-let order_db = JSON.parse(localStorage.getItem("orders")) || [];
+import {order_db} from '../db/db.js';
 
 //------------------------ GET ALL ORDERS ----------------------------------------
 export function getAllOrders() {
@@ -10,10 +10,6 @@ export function getAllOrders() {
 //------------------------- Add Order ----------------------------------------------
 export function addOrder(order) {
     order_db.push(order);
-    save();
+
 }
 
-//-------------------------- Save to Local Storage ----------------------------------
-function save() {
-    localStorage.setItem("orders", JSON.stringify(order_db));
-}

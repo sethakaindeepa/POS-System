@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3044a854-a86a-4e01-90c9-f0056650bf59" name="Changes" comment="Add save,update,load customers">
-      <change beforePath="$PROJECT_DIR$/view/system.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/system.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/ItemController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/ItemController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/OrderModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/model/OrderModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/Style1.css" beforeDir="false" afterPath="$PROJECT_DIR$/view/Style1.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/Style2.css" beforeDir="false" afterPath="$PROJECT_DIR$/view/Style2.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +105,10 @@
       <workItem from="1778143310924" duration="725000" />
       <workItem from="1778145448787" duration="3027000" />
       <workItem from="1778148551474" duration="946000" />
-      <workItem from="1778379304553" duration="32685000" />
+      <workItem from="1778379304553" duration="33888000" />
+      <workItem from="1778468413436" duration="1501000" />
+      <workItem from="1778735189813" duration="8317000" />
+      <workItem from="1778770805452" duration="520000" />
     </task>
     <task id="LOCAL-00001" summary="Add save,update,load customers">
       <option name="closed" value="true" />
@@ -126,7 +133,6 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/controller/CustomerController.js</url>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
